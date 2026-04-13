@@ -1589,6 +1589,10 @@
                   event_label: 'naac_readiness_audit'
                 });
               }
+              // Trigger Meta Pixel Lead Event
+              if (typeof fbq === 'function') {
+                fbq('track', 'Lead');
+              }
               // Fade out the form state
               formState.classList.add('state-hidden');
               // After form fades, cross-fade in the success overlay
